@@ -1,0 +1,291 @@
+{
+  "fishermans": [
+    {
+      "id": 0,
+      "equipment": "Laborum quo quos quo est architecto debitis.",
+      "baits": "Tenetur sapiente dolores molestiae mollitia aliquid molestiae.",
+      "techniques": "A consequatur expedita rerum optio vel ea.",
+      "poles": "eveniet cumque eum",
+      "contact": {
+        "tel": "(252) 729-4533 x397",
+        "name": "Leonora Kihn",
+        "address": {
+          "zipCode": "41855-6515",
+          "street": "Kellie Gateway",
+          "city": "North Lempiport",
+          "houseNumber": 23
+        }
+      }
+    },
+    {
+      "id": 1,
+      "equipment": "Quidem asperiores voluptates vitae enim qui sint.",
+      "baits": "Ut quibusdam dolores mollitia saepe labore itaque.",
+      "techniques": "Aut incidunt corrupti ratione ut est ea.",
+      "poles": "veniam et soluta",
+      "contact": {
+        "tel": "1-116-492-7195 x488",
+        "name": "Columbus King",
+        "address": {
+          "zipCode": "61208",
+          "street": "Hilpert Shoals",
+          "city": "West Francescabury",
+          "houseNumber": 23
+        }
+      }
+    },
+    {
+      "id": 2,
+      "equipment": "Est qui qui dolor soluta dolorem et.",
+      "baits": "Dicta enim voluptatem voluptas earum est sint.",
+      "techniques": "Voluptatem et debitis temporibus eos dolor enim.",
+      "poles": "maxime nihil voluptatum",
+      "contact": {
+        "tel": "064.168.4735 x1302",
+        "name": "Ardella Kutch",
+        "address": {
+          "zipCode": "30051-5313",
+          "street": "Kuvalis Island",
+          "city": "West Emery",
+          "houseNumber": 23
+        }
+      }
+    },
+    {
+      "id": 3,
+      "equipment": "At dicta placeat a dolor officiis ipsa.",
+      "baits": "Et alias non repudiandae tempora nisi sit.",
+      "techniques": "Omnis dolores nobis quo in nostrum maiores.",
+      "poles": "porro doloremque repellendus",
+      "contact": {
+        "tel": "(514) 482-0779 x0271",
+        "name": "Carolanne Osinski",
+        "address": {
+          "zipCode": "18658",
+          "street": "Claudie Plain",
+          "city": "Wolffort",
+          "houseNumber": 23
+        }
+      }
+    },
+    {
+      "id": 4,
+      "equipment": "Facilis et culpa ut saepe et voluptatum.",
+      "baits": "Earum non ipsum ratione dolorem harum non.",
+      "techniques": "Laborum perspiciatis nesciunt nihil ab qui et.",
+      "poles": "dolor eveniet maiores",
+      "contact": {
+        "tel": "1-952-679-4995 x9759",
+        "name": "Thea Lubowitz IV",
+        "address": {
+          "zipCode": "47961-9435",
+          "street": "Kozey Pines",
+          "city": "North Erwinmouth",
+          "houseNumber": 23
+        }
+      }
+    }
+  ],
+  "catches": [
+    {
+      "id": 0,
+      "timestamp": "2016-3-15",
+      "location": "Vermont",
+      "weight": 13929,
+      "species": "Lead",
+      "fishermanId": 1
+    },
+    {
+      "id": 1,
+      "timestamp": "2011-3-24",
+      "location": "North Dakota",
+      "weight": 3573,
+      "species": "frame",
+      "fishermanId": 5
+    },
+    {
+      "id": 2,
+      "timestamp": "2012-11-10",
+      "location": "Texas",
+      "weight": 18987,
+      "species": "South Georgia and the South Sandwich Islands",
+      "fishermanId": 2
+    },
+    {
+      "id": 3,
+      "timestamp": "2003-4-28",
+      "location": "North Dakota",
+      "weight": 86463,
+      "species": "cultivate",
+      "fishermanId": 0
+    },
+    {
+      "id": 4,
+      "timestamp": "2016-8-1",
+      "location": "Rhode Island",
+      "weight": 11769,
+      "species": "Route",
+      "fishermanId": 3
+    },
+    {
+      "id": 5,
+      "timestamp": "2000-2-15",
+      "location": "Missouri",
+      "weight": 59510,
+      "species": "Rupiah",
+      "fishermanId": 3
+    },
+    {
+      "id": 6,
+      "timestamp": "2019-3-24",
+      "location": "Wisconsin",
+      "weight": 28725,
+      "species": "calculate",
+      "fishermanId": 5
+    },
+    {
+      "id": 7,
+      "timestamp": "2017-9-10",
+      "location": "Rhode Island",
+      "weight": 31385,
+      "species": "content-based",
+      "fishermanId": 1
+    },
+    {
+      "id": 8,
+      "timestamp": "2013-2-18",
+      "location": "West Virginia",
+      "weight": 97272,
+      "species": "Dynamic",
+      "fishermanId": 1
+    },
+    {
+      "id": 9,
+      "timestamp": "2018-10-6",
+      "location": "Wyoming",
+      "weight": 87265,
+      "species": "Auto Loan Account",
+      "fishermanId": 2
+    },
+    {
+      "id": 10,
+      "timestamp": "2011-8-18",
+      "location": "North Dakota",
+      "weight": 53794,
+      "species": "eco-centric",
+      "fishermanId": 5
+    },
+    {
+      "id": 11,
+      "timestamp": "2017-4-28",
+      "location": "Washington",
+      "weight": 87823,
+      "species": "Senior",
+      "fishermanId": 5
+    },
+    {
+      "id": 12,
+      "timestamp": "2001-6-3",
+      "location": "Indiana",
+      "weight": 53405,
+      "species": "capacitor",
+      "fishermanId": 2
+    },
+    {
+      "id": 13,
+      "timestamp": "2001-4-11",
+      "location": "Oregon",
+      "weight": 35419,
+      "species": "frictionless",
+      "fishermanId": 5
+    },
+    {
+      "id": 14,
+      "timestamp": "2010-9-15",
+      "location": "Indiana",
+      "weight": 61495,
+      "species": "virtual",
+      "fishermanId": 0
+    },
+    {
+      "id": 15,
+      "timestamp": "2004-11-1",
+      "location": "Montana",
+      "weight": 14592,
+      "species": "synthesize",
+      "fishermanId": 1
+    },
+    {
+      "id": 16,
+      "timestamp": "2007-5-12",
+      "location": "Idaho",
+      "weight": 74267,
+      "species": "Incredible",
+      "fishermanId": 5
+    },
+    {
+      "id": 17,
+      "timestamp": "2010-2-6",
+      "location": "South Carolina",
+      "weight": 8096,
+      "species": "out-of-the-box",
+      "fishermanId": 1
+    },
+    {
+      "id": 18,
+      "timestamp": "2017-9-25",
+      "location": "Kansas",
+      "weight": 28530,
+      "species": "Jewelery",
+      "fishermanId": 0
+    },
+    {
+      "id": 19,
+      "timestamp": "2012-4-2",
+      "location": "Oklahoma",
+      "weight": 56423,
+      "species": "Customizable",
+      "fishermanId": 2
+    },
+    {
+      "timestamp": "2020-3-3",
+      "location": "asdasdasd",
+      "weight": "123123",
+      "species": "aasdasd",
+      "fishermanId": "1",
+      "id": 20
+    },
+    {
+      "timestamp": "2020-3-3",
+      "location": "asdasda",
+      "weight": "123123",
+      "species": "asdsadasd",
+      "fishermanId": "1",
+      "id": 21
+    },
+    {
+      "timestamp": "2020-3-2",
+      "location": "location",
+      "weight": "123",
+      "species": "ponty",
+      "fishermanId": "1",
+      "id": 22
+    },
+    {
+      "timestamp": "2020-3-2",
+      "location": "Budapest",
+      "weight": "123",
+      "species": "ponty",
+      "fishermanId": "1",
+      "id": 23
+    },
+    {
+      "timestamp": "2020-3-2",
+      "location": "asdf",
+      "weight": "123",
+      "species": "asdasd",
+      "fishermanId": "1",
+      "id": 24
+    }
+  ]
+}

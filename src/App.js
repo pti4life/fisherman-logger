@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Layout from './hoc/Layout/Layout';
+import Fisherman from './containers/Fisherman/Fisherman';
+import Management from './containers/Management/Management';
+
+import {Route, Switch} from 'react-router-dom';
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Switch>
+          <Route path="/fisherman" exact component={Fisherman} />
+          <Route path="/management" exact component={Management} />
+          <Route path="/" exact component={Fisherman} />
+        </Switch>
+      </Layout>
     </div>
   );
 }

@@ -1,0 +1,1 @@
+[0414/165436.721:ERROR:process_memory_win.cc(73)] ReadMemory at 0x14e546620b5 of 512 bytes failed: Egy ReadProcessMemory vagy WriteProcessMemory kérésnek csak egy része készült el. (0x12B)
