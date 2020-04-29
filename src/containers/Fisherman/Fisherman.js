@@ -12,12 +12,7 @@ import CatchesAction from "../../actions/CatchesAction";
 class Fisherman extends Component {
 
     state = {
-        fisherman: {
-            equipment: "equipment, equipment, equipment",
-            baits: "baits baits baits baitzs",
-            techniques: "techniques, techniques",
-            poles: "poles poles poles"
-        },
+        fisherman: null,
         catches: [],
         showForm: false,
         catch: {
@@ -32,26 +27,35 @@ class Fisherman extends Component {
             species: false
         },
         card: "aboutme",
-
-        authenticated: false,
         fishermanId: null,
-        exists: null
+        firstRender: true
     }
 
     onChangeOfCatches = () =>{
-        console.log("in change catches");
+        console.log("catches in onchangeof");
         console.log(CatchesStore._catches);
         this.setState({
             catches : CatchesStore._catches
         });
     }
 
+    onChangeOfFisherman = () =>{
+        console.log("fisherman in onchangeof");
+        console.log(CatchesStore._fisherman);
+        this.setState({
+            fisherman : CatchesStore._fisherman
+        });
+    }
+
     componentWillUnmount() {
-        CatchesStore.removeChangeListener(this.onChangeOfCatches)
+        CatchesStore.removeChangeListener(this.onChangeOfCatches);
+        CatchesStore.removeChangeListener(this.onChangeOfFisherman)
     }
 
     componentDidMount() {
         CatchesStore.addChangeListener(this.onChangeOfCatches);
+        CatchesStore.addChangeListener(this.onChangeOfFisherman);
+        
     }
 
     handleCatchSave = () => {
@@ -88,23 +92,13 @@ class Fisherman extends Component {
             validation.weight = false;
         }
 
-        const catches = [...this.state.catches, fishCatch];
-        console.log("validation");
-        console.log(validation);
         if(!showForm) {
             fishCatch.fishermanId = this.state.fishermanId;
             fishCatch.timestamp = new Date().getFullYear()+"-"+new Date().getMonth()+"-"+new Date().getDay();
-            axios.post("http://localhost:3001/catches",fishCatch)
-                .then((response) => {
-                    console.log(response);
-                })
-                .catch((err) => {
-                    console.log(err);
-                })
+            CatchesAction.addCatche(fishCatch);
             this.setState({
                 validation: validation,
-                showForm: showForm,
-                catches: catches
+                showForm: showForm
             });
         } else {
             this.setState({
@@ -160,32 +154,16 @@ class Fisherman extends Component {
     }
 
     fetchFishermanHandler = () => {
-        axios.get('http://localhost:3001/fishermans?id='+this.state.fishermanId)
-            .then((response)=>{
-                console.log("response data");
-                console.log(response.data);
-                if(response.data.length !== 1) {
-                    this.setState({exists: true});
-                } else {
-                    this.setState({exists: false, authenticated:true, fisherman:response.data[0]});
-                    axios.get('http://localhost:3001/catches?fishermanId='+this.state.fishermanId)
-                        .then((cacthesResponse)=>{
-                            CatchesAction.addCatches(cacthesResponse.data);
-                        })
-                        .catch((catchesErr)=>{
-                            console.log('problem\n'+catchesErr)
-                        });
-                }
-            })
-            .catch((err)=>{
-                console.log('problem\n'+err)
-            });
+        this.state.firstRender = false;
+        CatchesAction.getFishermanAndCatches(this.state.fishermanId);
         
     }
 
     render() {
+        console.log("fisherman in render");
+        console.log(this.state.fisherman);
         let content = null;
-        if(this.state.authenticated) {
+        if(this.state.fisherman !== null) {
             let card = (
                 <AboutMe fisherman={this.state.fisherman}/>
             );
@@ -229,7 +207,7 @@ class Fisherman extends Component {
             content = <Authenticate 
             fishermanIdOnChange={(e) => this.fishermanIdOnChange(e)}
             fetchFishermanHandler={() => this.fetchFishermanHandler()}
-            exists={this.state.exists}/>
+            exists={this.state.fisherman === null && !this.state.firstRender}/>
         }
         
 

@@ -1,35 +1,33 @@
 import React, {Component, Fragment} from 'react';
 import axios from 'axios';
 
+import ManagementStore from "../../../stores/ManagementStore";
+import ManagementAction from "../../../actions/ManagementAction";
+
 class Statistics extends Component {
 
     state = {
         lastMonth: 0
     };
 
-    componentWillMount() {
-        axios.get('http://localhost:3001/catches')
-            .then((response)=>{
-                const numberOfCatches = response.data.reduce((total, current)=>{
-                        const date = current.timestamp;
-                        const startSubstr = date.indexOf("-")+1;
-                        let month = date.substring(startSubstr,date.indexOf("-",startSubstr));
-                        console.log("date "+new Date().getMonth());
-                        console.log("month: "+month);
-                        if(month === new Date().getMonth().toString()) {
-                            console.log("tesa");
-                            return ++total;
-                        } else {
-                            return total;
-                        }
-                    } ,0);
-                    console.log("nmberofcatches"+numberOfCatches)
-                    this.setState({lastMonth: numberOfCatches});
+    onChangeOfnumOfCatches = () =>{
+        this.setState({
+            lastMonth : ManagementStore._actualMonthNumberOfCatches
+        });
+    }
 
-            })
-            .catch((err)=>{
-                console.log('problem\n'+err)
-            });
+    componentWillUnmount() {
+        ManagementStore.removeChangeListener(this.onChangeOfnumOfCatches);
+        
+    }
+
+    componentDidMount() {
+        ManagementStore.addChangeListener(this.onChangeOfnumOfCatches);
+        ManagementAction.getNumberOfCatchesByActualMonth();
+    }
+
+    componentWillMount() {
+        
     }
     
     render() {

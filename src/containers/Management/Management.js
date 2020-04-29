@@ -5,6 +5,9 @@ import axios from 'axios';
 import Fishers from './Fishers/Fishers';
 import Statistics from './Statistics/Statistics';
 
+import ManagementStore from "../../stores/ManagementStore";
+import ManagementAction from "../../actions/ManagementAction";
+
 class Management extends Component {
 
     state = {
@@ -35,15 +38,22 @@ class Management extends Component {
         card: "fishermans"
     }
 
-    componentWillMount() {
-        axios.get('http://localhost:3001/fishermans')
-            .then((response)=>{
-                console.log(response.data);
-                this.setState({fishers: response.data});
-            })
-            .catch((err)=>{
-                console.log('problem\n'+err);
-            });
+    onChangeOfFishermans = () =>{
+        console.log("fishermans in onchangeof");
+        console.log(ManagementStore._fishermans);
+        this.setState({
+            fishers : ManagementStore._fishermans
+        });
+    }
+
+    componentWillUnmount() {
+        ManagementStore.removeChangeListener(this.onChangeOfFishermans);
+        
+    }
+
+    componentDidMount() {
+        ManagementStore.addChangeListener(this.onChangeOfFishermans);
+        ManagementAction.getFishermans();
     }
     
     render(){
